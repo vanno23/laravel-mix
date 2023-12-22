@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .search {
+        text-align: center;
+        margin-top: 70px;
+        width: 450px;
+
+        .jamie {
+            font-size: 15px;
+            margin: 10px;
+            font-weight: 300;
+            color: rgb(88, 108, 126);
+        }
+
+        .search-box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+
+            input {
+                width: 100%;
+                border: 1px solid black;
+                padding: 10px;
+                border-radius: 25px;
+            }
+
+            .search-btn {
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 35px;
+                font-size: 20px;
+                color: white;
+                background-color: orangered;
+                border-top-right-radius: 25px;
+                border-bottom-right-radius: 25px;
+                border: none;
+            }
+        }
+    }
+
+    .meal-result {
+        margin-top: 50px;
+        max-width: 1280px;
+
+        .title {
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .meal {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            &.notFound {
+                display: block;
+                text-align: center;
+                color: orangered;
+                font-size: 35px;
+                font-weight: bold;
+            }
+
+            .meal-item {
+                box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img {
+                    width: 100%;
+                    height: 350px;
+                    object-fit: cover;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+
+                .meal-name {
+                    text-transform: capitalize;
+                    font-size: 21px;
+                    margin: 10px 0px;
+                }
+
+                .getRecipe-btn {
+                    cursor: pointer;
+                    width: 40%;
+                    display: flex;
+                    justify-content: center;
+                    background-color: orangered;
+                    border: none;
+                    color: white;
+                    text-transform: capitalize;
+                    padding: 10px;
+                    border-radius: 25px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .meal-details {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: orangered;
+            border-radius: 1rem;
+            color: white;
+            padding: 30px 70px;
+            overflow-y: scroll;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+
+            .meal-details-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.meal-details.active {
+    display: flex;
+}
+
+.meal-details .recipeText p {
+    margin: 20px 0px;
+}
+
+.meal-details .recipeImg {
+    width: 100%;
+}
+
+.meal-details img {
+    object-fit: cover;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.meal-details .recipeName {
+    text-transform: capitalize;
+}
+
+.meal-details .close-btn {
+    text-align: right;
+}
+
+.close-btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    background-color: white;
+    border-radius: 50%;
+    border: none;
+    font-size: 17px;
+}
+
+.recipeCategory {
+    padding: 4px 20px;
+    border-radius: 10px;
+    background-color: white;
+    color: orangered;
+    margin: 10px 0px;
+}
